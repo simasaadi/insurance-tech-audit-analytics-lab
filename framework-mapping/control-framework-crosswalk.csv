@@ -3,10 +3,9 @@ T001,Dormant Privileged Accounts,IAM,Protect,PR.AA,Identity and Access Managemen
 T002,Users Without MFA,IAM,Protect,PR.AA,Identity and Access Management,CIS 5 Account Management,Authentication and Access Control,IA
 T003,Service Accounts Without Owner,IAM,Govern,GV.OC,Technology Asset Management,CIS 5 Account Management,Access Rights Administration,AC
 T004,High-Risk Vulnerabilities Past SLA,Vulnerability Management,Identify,ID.RA,Cyber Security Monitoring and Response,CIS 7 Continuous Vulnerability Management,Information Security Operations,RA
-T005,Critical Internet-Facing Assets with Open Findings,Infrastructure Security,Protect,PR.PT,Technology Operations,CIS 12 Network Infrastructure Management,Information Security Operations,SC
-T006,Backup Failures on Critical Assets,Resilience,Recover,RC.RP,Disaster Recovery and Resilience,CIS 11 Data Recovery,Business Continuity and Resilience,CP
-T007,Stale Access After Termination,IAM,Protect,PR.AA,Identity and Access Management,CIS 6 Access Control Management,Access Rights Administration,AC
-T008,Unsupported OS in Production,Infrastructure Security,Protect,PR.PS,Technology Operations,CIS 4 Secure Configuration of Enterprise Assets and Software,Information Security Operations,CM
-T009,Failed DR Tests Without Retest,Resilience,Recover,RC.IM,Disaster Recovery and Resilience,CIS 11 Data Recovery,Business Continuity and Resilience,CP
-T010,Public or Overly Broad Storage Policies,Cloud Security,Protect,PR.DS,Cyber Security,CIS 3 Data Protection,Information Security Operations,SC
-T011,Overly Permissive Firewall Rules,Network Security,Protect,PR.PT,Technology Operations,CIS 12 Network Infrastructure Management,Network Security,SC
+T005,Stale Access After Termination,IAM,Protect,PR.AA,Identity and Access Management,CIS 5 Account Management,Access Rights Administration,AC
+T006,Unsupported OS in Production,Infrastructure Security,Protect,PR.PS,Technology Operations,CIS 4 Secure Configuration of Enterprise Assets and Software,Information Security Operations,CM
+T007,Backup Failures on Critical Assets,Resilience,Recover,RC.RP,Disaster Recovery and Resilience,CIS 11 Data Recovery,Business Continuity and Resilience,CP
+T008,Failed DR Tests Without Retest,Resilience,Recover,RC.IM,Disaster Recovery and Resilience,CIS 11 Data Recovery,Business Continuity and Resilience,CP
+T009,Public or Overly Broad Storage Policies,Cloud Security,Protect,PR.DS,Cyber Security,CIS 3 Data Protection,Information Security Operations,SC
+T010,Overly Permissive Firewall Rules,Network Security,Protect,PR.PT,Technology Operations,CIS 12 Network Infrastructure Management,Network Security,SC

@@ -15,15 +15,15 @@
 ## Suggested visuals
 
 ### Audit Overview
-- Findings by domain
+- Open findings by domain
 - Findings by severity
-- Open issues by control area
+- Issues by control area
 
 ### IAM Review
 - Users without MFA
 - Dormant privileged accounts
-- Orphan or unmanaged service accounts
-- Termination-related access exceptions
+- Service accounts without named owner
+- Privileged accounts outside approved group model
 
 ### Vulnerability Management
 - Overdue findings

@@ -2,6 +2,6 @@ metric,value
 Open public cloud exposure findings,3
 Production assets with unsupported operating systems,3
 Production firewall rules with broad or any-any access,3
-Critical internet-facing assets,2
 Assets with missing patches,3
 Emergency changes without complete review,2
+Critical assets with failed backup status,1

@@ -2,5 +2,5 @@ metric,value
 Active users without MFA,3
 Dormant privileged accounts over 60 days,3
 Privileged service accounts without named owner,1
-Terminated users with privileged account exposure,1
+Terminated users with post-termination activity,0
 Privileged accounts outside approved group model,4
