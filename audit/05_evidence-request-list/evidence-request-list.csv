@@ -1,0 +1,9 @@
+request_id,evidence_item,purpose,source_system,owner,priority,status
+ERL-001,User access export with MFA status,Test active accounts and MFA coverage,Identity Platform,Identity and Access Management,High,Requested
+ERL-002,Privileged account inventory,Test privileged access governance and dormancy,Privileged Access Management,Infrastructure Security,High,Requested
+ERL-003,Service account ownership register,Validate accountability for service accounts,CMDB / IAM,Infrastructure Security,High,Requested
+ERL-004,Vulnerability findings export with dates and status,Test SLA remediation performance,Vulnerability Scanner,Vulnerability Management,High,Requested
+ERL-005,Asset inventory with business criticality,Join findings to criticality and exposure,CMDB,Infrastructure Operations,High,Requested
+ERL-006,Backup status logs for critical assets,Assess resilience and failed backup follow-up,Backup Platform,Infrastructure Operations,Medium,Requested
+ERL-007,Exception approvals for MFA or privileged access,Validate approved deviations,Security Governance,Security Governance,Medium,Requested
+ERL-008,Quarterly access review evidence,Assess oversight and recertification,Identity Governance,Identity and Access Management,Medium,Requested

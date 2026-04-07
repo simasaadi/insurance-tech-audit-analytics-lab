@@ -1,0 +1,8 @@
+exception_id,test_id,issue_id,exception_title,asset_or_account,severity,root_cause,status
+EX-001,T001,ISS-001,Dormant privileged account outside approved group,liam.turner.root,High,Access recertification not enforced,Open
+EX-002,T001,ISS-001,Terminated user retained privileged admin,sophia.ahmed.admin,High,Deprovisioning breakdown,Open
+EX-003,T002,ISS-002,Active privileged user without MFA,U003,High,MFA rollout gap,Open
+EX-004,T002,ISS-002,Active contractor without MFA,U012,High,Third-party onboarding gap,Open
+EX-005,T003,ISS-003,Service account with no named owner,svc-backup-prod,High,Ownership register incomplete,Open
+EX-006,T004,ISS-004,Critical KEV-listed vulnerability overdue on claims DB,A002,High,Patch backlog and weak escalation,Open
+EX-007,T004,ISS-004,Critical KEV-listed vulnerability overdue on customer portal,A008,High,Internet-facing remediation delay,Open

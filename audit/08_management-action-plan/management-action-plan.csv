@@ -1,0 +1,5 @@
+issue_id,issue_title,rating,management_action,action_owner,target_date,status,validation_required
+ISS-001,Stale and weakly governed privileged accounts,High,Review all privileged accounts remove dormant access enforce approved admin-group model and assign named owners,Head of Infrastructure Security,2026-05-15,Open,Yes
+ISS-002,Active users without MFA coverage,High,Enable MFA for all active users and document any formally approved exception,Manager IAM,2026-04-30,Open,Yes
+ISS-003,Privileged service account without named owner,High,Assign technical and business owner to each service account and review elevated entitlements,Manager Infrastructure Operations,2026-05-05,Open,Yes
+ISS-004,Critical and high vulnerabilities past SLA,High,Prioritize remediation for overdue findings on critical and internet-facing assets and track retest evidence,Manager Vulnerability Management,2026-04-25,Open,Yes
