@@ -43,6 +43,7 @@ def main():
     changes = read_csv(SEEDS / "change_tickets.csv")
 
     assets_by_id = {row["asset_id"]: row for row in assets}
+    users_by_id = {row["user_id"]: row for row in users}
 
     active_users_without_mfa = sum(
         1 for row in users
@@ -187,7 +188,189 @@ def main():
         ],
     )
 
-    print("Generated curated summary tables in data/curated")
+    iam_detail = []
+
+    for row in users:
+        if row["employment_status"] == "Active" and row["mfa_enabled"] == "No":
+            iam_detail.append({
+                "issue_type": "Active user without MFA",
+                "user_or_account": row["user_id"],
+                "display_name": row["employee_name"],
+                "department": row["department"],
+                "asset_id": "",
+                "asset_name": "",
+                "severity": "High" if row["account_type"] == "Privileged" else "Medium",
+                "status": "Open",
+                "source_table": "user_access"
+            })
+
+        if (
+            row["employment_status"] == "Terminated"
+            and parse_date(row["termination_date"])
+            and parse_date(row["last_login_date"])
+            and parse_date(row["last_login_date"]) > parse_date(row["termination_date"])
+        ):
+            iam_detail.append({
+                "issue_type": "Post-termination access activity",
+                "user_or_account": row["user_id"],
+                "display_name": row["employee_name"],
+                "department": row["department"],
+                "asset_id": "",
+                "asset_name": "",
+                "severity": "High",
+                "status": "Open",
+                "source_table": "user_access"
+            })
+
+    for row in privileged:
+        linked_user = users_by_id.get(row["user_id"], {})
+        if parse_date(row["last_used_date"]) and parse_date(row["last_used_date"]) < DORMANT_THRESHOLD:
+            iam_detail.append({
+                "issue_type": "Dormant privileged account",
+                "user_or_account": row["account_name"],
+                "display_name": linked_user.get("employee_name", ""),
+                "department": linked_user.get("department", ""),
+                "asset_id": "",
+                "asset_name": "",
+                "severity": "High",
+                "status": "Open",
+                "source_table": "privileged_accounts"
+            })
+
+        if row["account_name"].startswith("svc-") and not row["named_owner"].strip():
+            iam_detail.append({
+                "issue_type": "Service account without named owner",
+                "user_or_account": row["account_name"],
+                "display_name": "",
+                "department": "",
+                "asset_id": "",
+                "asset_name": "",
+                "severity": "High",
+                "status": "Open",
+                "source_table": "privileged_accounts"
+            })
+
+        if row["approved_group_member"] == "No":
+            iam_detail.append({
+                "issue_type": "Privileged account outside approved group model",
+                "user_or_account": row["account_name"],
+                "display_name": linked_user.get("employee_name", ""),
+                "department": linked_user.get("department", ""),
+                "asset_id": "",
+                "asset_name": "",
+                "severity": "High",
+                "status": "Open",
+                "source_table": "privileged_accounts"
+            })
+
+    write_csv(
+        CURATED / "iam_detail.csv",
+        ["issue_type", "user_or_account", "display_name", "department", "asset_id", "asset_name", "severity", "status", "source_table"],
+        iam_detail,
+    )
+
+    vulnerability_detail = []
+    for row in vulns:
+        asset = assets_by_id.get(row["asset_id"], {})
+        if (
+            row["status"] == "Open"
+            and row["severity"] in {"Critical", "High"}
+            and parse_date(row["sla_due_date"]) < REF_DATE
+        ):
+            vulnerability_detail.append({
+                "finding_id": row["finding_id"],
+                "asset_id": row["asset_id"],
+                "asset_name": asset.get("hostname", ""),
+                "business_service": asset.get("business_service", ""),
+                "business_criticality": asset.get("business_criticality", ""),
+                "internet_facing": asset.get("internet_facing", ""),
+                "severity": row["severity"],
+                "kev_listed": row["kev_listed"],
+                "status": row["status"],
+                "sla_due_date": row["sla_due_date"]
+            })
+
+    write_csv(
+        CURATED / "vulnerability_detail.csv",
+        ["finding_id", "asset_id", "asset_name", "business_service", "business_criticality", "internet_facing", "severity", "kev_listed", "status", "sla_due_date"],
+        vulnerability_detail,
+    )
+
+    cloud_infra_detail = []
+
+    for row in cloud:
+        if (
+            row["status"] == "Open"
+            and row["public_exposure"] == "Yes"
+            and row["resource_type"] in PUBLIC_RESOURCE_TYPES
+        ):
+            cloud_infra_detail.append({
+                "issue_type": "Public cloud exposure",
+                "resource_or_rule_id": row["resource_id"],
+                "platform_or_environment": row["cloud_platform"],
+                "severity": row["severity"],
+                "status": row["status"],
+                "detail": row["policy_name"]
+            })
+
+    for row in firewall:
+        if (
+            row["environment"] == "Production"
+            and (
+                row["any_any_rule"] == "Yes"
+                or row["access_scope"] == "Broad"
+                or row["port_protocol"] == "Any/Any"
+            )
+        ):
+            cloud_infra_detail.append({
+                "issue_type": "Overly permissive firewall rule",
+                "resource_or_rule_id": row["rule_id"],
+                "platform_or_environment": row["environment"],
+                "severity": "High",
+                "status": "Open",
+                "detail": row["business_justification"]
+            })
+
+    for row in assets:
+        if row["environment"] == "Production" and row["os_version"] in UNSUPPORTED_OS:
+            cloud_infra_detail.append({
+                "issue_type": "Unsupported OS in production",
+                "resource_or_rule_id": row["asset_id"],
+                "platform_or_environment": row["cloud_platform"],
+                "severity": "High" if row["business_criticality"] == "Critical" else "Medium",
+                "status": "Open",
+                "detail": row["hostname"]
+            })
+
+    write_csv(
+        CURATED / "cloud_infra_detail.csv",
+        ["issue_type", "resource_or_rule_id", "platform_or_environment", "severity", "status", "detail"],
+        cloud_infra_detail,
+    )
+
+    resilience_detail = []
+    for row in dr_logs:
+        asset = assets_by_id.get(row["asset_id"], {})
+        if row["test_result"] == "Fail" and row["retest_completed"] == "No":
+            resilience_detail.append({
+                "test_id": row["test_id"],
+                "asset_id": row["asset_id"],
+                "asset_name": asset.get("hostname", ""),
+                "business_service": asset.get("business_service", ""),
+                "business_criticality": asset.get("business_criticality", ""),
+                "test_type": row["test_type"],
+                "test_result": row["test_result"],
+                "retest_completed": row["retest_completed"],
+                "status": "Open"
+            })
+
+    write_csv(
+        CURATED / "resilience_detail.csv",
+        ["test_id", "asset_id", "asset_name", "business_service", "business_criticality", "test_type", "test_result", "retest_completed", "status"],
+        resilience_detail,
+    )
+
+    print("Generated curated summary and detail tables in data/curated")
 
 
 if __name__ == "__main__":

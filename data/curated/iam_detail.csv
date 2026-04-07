@@ -1,0 +1,12 @@
+issue_type,user_or_account,display_name,department,asset_id,asset_name,severity,status,source_table
+Active user without MFA,U003,Liam Turner,IT,,,Medium,Open,user_access
+Active user without MFA,U009,Grace Wilson,Claims,,,Medium,Open,user_access
+Active user without MFA,U012,James Carter,Vendor,,,Medium,Open,user_access
+Dormant privileged account,james.carter.admin,Mia Thompson,IT,,,High,Open,privileged_accounts
+Privileged account outside approved group model,james.carter.admin,Mia Thompson,IT,,,High,Open,privileged_accounts
+Dormant privileged account,liam.turner.root,Liam Turner,IT,,,High,Open,privileged_accounts
+Privileged account outside approved group model,liam.turner.root,Liam Turner,IT,,,High,Open,privileged_accounts
+Privileged account outside approved group model,sophia.ahmed.admin,Sophia Ahmed,Operations,,,High,Open,privileged_accounts
+Dormant privileged account,svc-backup-prod,,,,,High,Open,privileged_accounts
+Service account without named owner,svc-backup-prod,,,,,High,Open,privileged_accounts
+Privileged account outside approved group model,svc-backup-prod,,,,,High,Open,privileged_accounts

@@ -1,0 +1,3 @@
+test_id,asset_id,asset_name,business_service,business_criticality,test_type,test_result,retest_completed,status
+BDR002,A004,ns-fin-report-01,Finance Reporting,High,Backup Restore,Fail,No,Open
+BDR004,A008,ns-cust-portal-01,Customer Portal,Critical,DR,Fail,No,Open

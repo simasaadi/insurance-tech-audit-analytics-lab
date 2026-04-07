@@ -1,0 +1,10 @@
+issue_type,resource_or_rule_id,platform_or_environment,severity,status,detail
+Public cloud exposure,az-storage-claims-001,Azure,High,Open,Public storage should be disabled
+Public cloud exposure,aws-s3-custportal-logs,AWS,Critical,Open,S3 buckets should not allow public read
+Public cloud exposure,aws-ec2-policy-api-01,AWS,High,Open,Internet-facing compute hardening required
+Overly permissive firewall rule,FW002,Production,High,Open,Legacy admin support
+Overly permissive firewall rule,FW003,Production,High,Open,Temporary migration rule
+Overly permissive firewall rule,FW005,Production,High,Open,Third-party backup support
+Unsupported OS in production,A002,Azure,High,Open,ns-claims-db-01
+Unsupported OS in production,A004,OnPrem,Medium,Open,ns-fin-report-01
+Unsupported OS in production,A008,AWS,High,Open,ns-cust-portal-01

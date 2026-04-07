@@ -123,6 +123,10 @@ def main():
         CURATED / "iam_review_summary.csv",
         CURATED / "vulnerability_summary.csv",
         CURATED / "cloud_infra_posture_summary.csv",
+        CURATED / "iam_detail.csv",
+        CURATED / "vulnerability_detail.csv",
+        CURATED / "cloud_infra_detail.csv",
+        CURATED / "resilience_detail.csv",
     ]
     for path in curated_files:
         if not path.exists():
