@@ -1,0 +1,7 @@
+patch_id,asset_id,patch_group,patch_status,last_patch_date,maintenance_window,exception_approved
+P001,A001,Windows Cumulative Update,Applied,2026-03-28,Weekend-1,No
+P002,A002,Windows Security Rollup,Missing,2026-01-15,Weekend-1,No
+P003,A003,Linux Kernel Update,Deferred,2026-02-10,Weekend-2,Yes
+P004,A004,Windows Legacy Patch,Missing,2025-12-01,Weekend-3,No
+P005,A006,Ubuntu Security Update,Applied,2026-03-30,Weekend-1,No
+P006,A008,Ubuntu Security Update,Missing,2026-01-22,Weekend-2,No

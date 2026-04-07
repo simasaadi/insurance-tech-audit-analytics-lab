@@ -1,0 +1,6 @@
+rule_id,environment,source_zone,destination_zone,port_protocol,access_scope,any_any_rule,business_justification,review_status
+FW001,Production,Internet,Claims-Web,443/TCP,Restricted,No,Customer portal access,Reviewed
+FW002,Production,Admin,Prod-Servers,3389/TCP,Broad,No,Legacy admin support,Not Reviewed
+FW003,Production,Any,Any,Any/Any,Open,Yes,Temporary migration rule,Not Reviewed
+FW004,Non-Production,Dev,Test-DB,1433/TCP,Restricted,No,Application testing,Reviewed
+FW005,Production,Vendor,Backup-Manager,22/TCP,Broad,No,Third-party backup support,Not Reviewed

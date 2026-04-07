@@ -1,0 +1,7 @@
+application_id,application_name,business_unit,business_criticality,data_classification,hosting_model,customer_facing,dr_tier
+APP001,Claims Portal,Claims,Critical,Confidential,Azure,Yes,Tier-1
+APP002,Claims Database,Claims,Critical,Restricted,Azure,No,Tier-1
+APP003,Policy API,Policy Admin,Critical,Restricted,AWS,Yes,Tier-1
+APP004,Finance Reporting,Finance,High,Confidential,OnPrem,No,Tier-2
+APP005,Customer Portal,Digital,Critical,Restricted,AWS,Yes,Tier-1
+APP006,Backup Management,Infrastructure,Critical,Internal,OnPrem,No,Tier-1

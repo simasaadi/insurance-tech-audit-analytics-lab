@@ -1,0 +1,6 @@
+change_id,asset_id,change_type,implementation_date,approval_status,post_implementation_review
+CH001,A001,Normal,2026-03-02,Approved,Completed
+CH002,A002,Emergency,2026-03-12,Approved,Missing
+CH003,A004,Emergency,2026-01-18,Not Approved,Missing
+CH004,A008,Normal,2026-03-28,Approved,Completed
+CH005,A006,Standard,2026-03-08,Approved,Completed

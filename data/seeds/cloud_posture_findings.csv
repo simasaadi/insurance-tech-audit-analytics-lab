@@ -1,0 +1,6 @@
+finding_id,cloud_platform,resource_id,resource_type,control_area,severity,status,public_exposure,policy_name
+CPF001,Azure,az-storage-claims-001,Storage Account,Storage Access,High,Open,Yes,Public storage should be disabled
+CPF002,AWS,aws-s3-custportal-logs,S3 Bucket,Storage Access,Critical,Open,Yes,S3 buckets should not allow public read
+CPF003,Azure,az-kv-finance-001,Key Vault,Secrets Management,Medium,Closed,No,Key vault network restriction required
+CPF004,AWS,aws-ec2-policy-api-01,EC2 Instance,Vulnerability Exposure,High,Open,Yes,Internet-facing compute hardening required
+CPF005,Azure,az-sub-prod-01,Subscription,Defender Posture,Medium,Open,No,MFA for privileged roles required

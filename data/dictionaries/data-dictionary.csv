@@ -34,3 +34,50 @@ vulnerability_findings,status,text,Open or Closed
 vulnerability_findings,date_identified,date,Date finding was detected
 vulnerability_findings,sla_due_date,date,Required remediation due date
 vulnerability_findings,date_closed,date,Closure date if remediated
+
+patching_status,patch_id,text,Unique patch record identifier
+patching_status,asset_id,text,Linked asset identifier
+patching_status,patch_group,text,Patch or update grouping
+patching_status,patch_status,text,Applied Missing or Deferred
+patching_status,last_patch_date,date,Most recent patch date
+patching_status,maintenance_window,text,Approved patching window
+patching_status,exception_approved,text,Whether an exception was approved
+firewall_rules,rule_id,text,Unique firewall rule identifier
+firewall_rules,environment,text,Production or Non-Production
+firewall_rules,source_zone,text,Source network zone
+firewall_rules,destination_zone,text,Destination network zone
+firewall_rules,port_protocol,text,Allowed port and protocol
+firewall_rules,access_scope,text,Rule scope description
+firewall_rules,any_any_rule,text,Whether rule is broadly permissive
+firewall_rules,business_justification,text,Business reason for rule
+firewall_rules,review_status,text,Reviewed or Not Reviewed
+cloud_posture_findings,finding_id,text,Unique cloud posture finding identifier
+cloud_posture_findings,cloud_platform,text,AWS or Azure
+cloud_posture_findings,resource_id,text,Cloud resource identifier
+cloud_posture_findings,resource_type,text,Type of cloud resource
+cloud_posture_findings,control_area,text,Security control area
+cloud_posture_findings,severity,text,Critical High Medium or Low
+cloud_posture_findings,status,text,Open or Closed
+cloud_posture_findings,public_exposure,text,Whether resource is publicly exposed
+cloud_posture_findings,policy_name,text,Related policy or standard
+backup_dr_test_logs,test_id,text,Unique backup or DR test identifier
+backup_dr_test_logs,asset_id,text,Linked asset identifier
+backup_dr_test_logs,test_type,text,Backup Restore or DR
+backup_dr_test_logs,test_date,date,Date test was performed
+backup_dr_test_logs,test_result,text,Pass or Fail
+backup_dr_test_logs,retest_completed,text,Yes or No
+backup_dr_test_logs,retest_date,date,Retest date if completed
+change_tickets,change_id,text,Unique change ticket identifier
+change_tickets,asset_id,text,Linked asset identifier
+change_tickets,change_type,text,Emergency Standard or Normal
+change_tickets,implementation_date,date,Change implementation date
+change_tickets,approval_status,text,Approved or Not Approved
+change_tickets,post_implementation_review,text,Completed or Missing
+application_inventory,application_id,text,Unique application identifier
+application_inventory,application_name,text,Application name
+application_inventory,business_unit,text,Business owner unit
+application_inventory,business_criticality,text,Criticality rating
+application_inventory,data_classification,text,Confidentiality category
+application_inventory,hosting_model,text,Azure AWS or OnPrem
+application_inventory,customer_facing,text,Yes or No
+application_inventory,dr_tier,text,Disaster recovery tier
