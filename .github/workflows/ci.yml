@@ -1,0 +1,26 @@
+name: repo-ci
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  qa-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate curated summary tables
+        run: python scripts/data-generation/generate_data.py
+
+      - name: Run QA checks
+        run: python scripts/qa-checks/qa_checks.py
