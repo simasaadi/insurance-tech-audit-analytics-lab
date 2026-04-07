@@ -1,0 +1,36 @@
+dataset,column_name,data_type,description
+user_access,user_id,text,Unique user identifier
+user_access,employee_name,text,Employee display name
+user_access,department,text,Business unit
+user_access,job_title,text,Role title
+user_access,employment_status,text,Active or Terminated
+user_access,termination_date,date,Termination date if applicable
+user_access,mfa_enabled,text,Yes or No
+user_access,last_login_date,date,Most recent login date
+user_access,access_group,text,Primary access group
+user_access,account_type,text,Standard or Privileged
+privileged_accounts,account_id,text,Unique privileged account identifier
+privileged_accounts,user_id,text,Linked user identifier
+privileged_accounts,account_name,text,Privileged account name
+privileged_accounts,privilege_type,text,Admin privilege category
+privileged_accounts,approved_group_member,text,Whether assigned through approved admin group
+privileged_accounts,named_owner,text,Named owner of account
+privileged_accounts,last_used_date,date,Most recent privileged account use
+asset_inventory,asset_id,text,Unique asset identifier
+asset_inventory,hostname,text,Server or device name
+asset_inventory,environment,text,Production or Non-Production
+asset_inventory,cloud_platform,text,Azure AWS or OnPrem
+asset_inventory,business_service,text,Business service supported
+asset_inventory,business_criticality,text,Criticality rating
+asset_inventory,internet_facing,text,Yes or No
+asset_inventory,os_version,text,Operating system version
+asset_inventory,backup_status,text,Latest backup status
+vulnerability_findings,finding_id,text,Unique vulnerability finding identifier
+vulnerability_findings,asset_id,text,Linked asset identifier
+vulnerability_findings,severity,text,Critical High Medium or Low
+vulnerability_findings,cve_id,text,CVE identifier if available
+vulnerability_findings,kev_listed,text,Whether vulnerability is in KEV list
+vulnerability_findings,status,text,Open or Closed
+vulnerability_findings,date_identified,date,Date finding was detected
+vulnerability_findings,sla_due_date,date,Required remediation due date
+vulnerability_findings,date_closed,date,Closure date if remediated

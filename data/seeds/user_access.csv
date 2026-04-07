@@ -1,0 +1,13 @@
+user_id,employee_name,department,job_title,employment_status,termination_date,mfa_enabled,last_login_date,access_group,account_type
+U001,Ava Chen,Claims,Claims Analyst,Active,,Yes,2026-04-05,CLAIMS_STD,Standard
+U002,Noah Patel,Finance,Finance Manager,Active,,Yes,2026-04-06,FIN_MGR,Standard
+U003,Liam Turner,IT,Infrastructure Analyst,Active,,No,2026-03-18,INFRA_STD,Standard
+U004,Emma Rossi,Security,Security Engineer,Active,,Yes,2026-04-07,SEC_ADMIN,Privileged
+U005,Olivia Martin,HR,HR Business Partner,Active,,Yes,2026-04-01,HR_STD,Standard
+U006,Ethan Brooks,IT,Cloud Administrator,Active,,Yes,2026-04-06,CLOUD_ADMIN,Privileged
+U007,Sophia Ahmed,Operations,Operations Coordinator,Terminated,2026-02-14,Yes,2026-02-10,OPS_STD,Standard
+U008,Daniel Kim,Security,SOC Analyst,Active,,Yes,2026-04-04,SEC_STD,Standard
+U009,Grace Wilson,Claims,Claims Supervisor,Active,,No,2026-03-29,CLAIMS_SUP,Standard
+U010,Lucas Bennett,Finance,Reporting Analyst,Active,,Yes,2026-04-03,FIN_REPORT,Standard
+U011,Mia Thompson,IT,System Administrator,Active,,Yes,2026-04-02,WIN_ADMIN,Privileged
+U012,James Carter,Vendor,Contractor Support,Active,,No,2026-01-11,THIRD_PARTY_SUPPORT,Standard

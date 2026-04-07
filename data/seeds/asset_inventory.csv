@@ -1,0 +1,9 @@
+asset_id,hostname,environment,cloud_platform,business_service,business_criticality,internet_facing,os_version,backup_status
+A001,ns-claims-web-01,Production,Azure,Claims Portal,High,Yes,Windows Server 2022,Success
+A002,ns-claims-db-01,Production,Azure,Claims Database,Critical,No,Windows Server 2016,Success
+A003,ns-policy-api-01,Production,AWS,Policy API,Critical,Yes,Amazon Linux 2,Success
+A004,ns-fin-report-01,Production,OnPrem,Finance Reporting,High,No,Windows Server 2012,Failed
+A005,ns-hr-app-01,Non-Production,Azure,HR Application,Medium,No,Windows Server 2019,Success
+A006,ns-bastion-01,Production,Azure,Admin Access Gateway,High,Yes,Ubuntu 20.04,Success
+A007,ns-backup-mgr-01,Production,OnPrem,Backup Management,Critical,No,Windows Server 2019,Success
+A008,ns-cust-portal-01,Production,AWS,Customer Portal,Critical,Yes,Ubuntu 18.04,Failed
