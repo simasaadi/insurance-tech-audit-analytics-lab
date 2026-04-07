@@ -1,0 +1,7 @@
+domain,severity,open_findings,count
+IAM,High,Yes,5
+Vulnerability Management,High,Yes,4
+Infrastructure Security,High,Yes,3
+Cloud Security,High,Yes,3
+Resilience,High,Yes,2
+Network Security,High,Yes,2
