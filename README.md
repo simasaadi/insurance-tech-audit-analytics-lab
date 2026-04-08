@@ -14,6 +14,7 @@ NorthStar Life Insurance
 - dashboard-ready reporting outputs
 
 ## Main repo components
+
 ### Audit planning and governance
 - audit charter
 - risk assessment summary
@@ -57,5 +58,9 @@ NorthStar Life Insurance
 See docs/repo-architecture.md for the repo flow and structure.
 
 ## Run locally
+
+Generate curated outputs:
 python scripts/data-generation/generate_data.py
+
+Run QA checks:
 python scripts/qa-checks/qa_checks.py
