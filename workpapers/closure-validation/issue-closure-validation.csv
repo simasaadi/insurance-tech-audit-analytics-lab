@@ -1,0 +1,7 @@
+issue_id,issue_title,validation_step,expected_evidence,validation_status,validated_by,validation_date,notes
+ISS-001,Stale and Weakly Governed Privileged Accounts,Confirm dormant privileged accounts removed,Updated privileged account inventory and recertification evidence,Pending,,,
+ISS-002,Active Users Without MFA Coverage,Confirm MFA enabled for all active users,Updated user access export showing MFA enforcement,Pending,,,
+ISS-003,Privileged Service Account Without Named Owner,Confirm named owner assigned to all elevated service accounts,Updated service account ownership register,Pending,,,
+ISS-004,Critical and High Vulnerabilities Past SLA,Confirm overdue high-risk findings closed or formally excepted,Updated vulnerability export and retest evidence,Pending,,,
+ISS-005,Admin Rights Assigned Outside Approved Groups,Confirm elevated access is assigned through approved groups only,Updated admin-group membership report,Pending,,,
+ISS-006,Critical Internet-Facing Assets with Open Findings,Confirm exposed critical assets no longer have open high-risk findings,Joined asset and vulnerability evidence set,Pending,,,

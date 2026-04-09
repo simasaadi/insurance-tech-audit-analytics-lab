@@ -113,8 +113,8 @@ def main():
             ok("Risk-control matrix and framework crosswalk IDs are aligned")
 
     sql_files = sorted(AUDIT_TESTS.glob("*.sql"))
-    if len(sql_files) != 10:
-        fail(f"Expected 10 SQL audit tests but found {len(sql_files)}", errors)
+    if len(sql_files) != 12:
+        fail(f"Expected 12 SQL audit tests but found {len(sql_files)}", errors)
     else:
         ok("Found 10 SQL audit tests")
 
@@ -143,3 +143,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

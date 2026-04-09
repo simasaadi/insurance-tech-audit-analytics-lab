@@ -1,0 +1,7 @@
+issue_id,issue_title,rating,issue_owner,target_remediation_date,current_status,validation_status,validation_date,evidence_reference,comments
+ISS-001,Stale and Weakly Governed Privileged Accounts,High,Head of Infrastructure Security,2026-05-15,In Progress,Pending,,ERL-002,Privileged inventory cleanup underway
+ISS-002,Active Users Without MFA Coverage,High,Manager IAM,2026-04-30,In Progress,Pending,,ERL-001,MFA rollout remediation in progress
+ISS-003,Privileged Service Account Without Named Owner,High,Manager Infrastructure Operations,2026-05-05,Open,Pending,,ERL-003,Ownership assignment not completed
+ISS-004,Critical and High Vulnerabilities Past SLA,High,Manager Vulnerability Management,2026-04-25,In Progress,Pending,,ERL-004,Prioritized remediation plan in progress
+ISS-005,Admin Rights Assigned Outside Approved Groups,High,Manager IAM,2026-05-10,Open,Pending,,ERL-002,Requires review of elevated entitlements
+ISS-006,Critical Internet-Facing Assets with Open Findings,High,Manager Infrastructure Security,2026-05-12,Open,Pending,,ERL-005,Requires targeted remediation for exposed assets

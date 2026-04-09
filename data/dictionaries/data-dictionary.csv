@@ -81,3 +81,14 @@ application_inventory,data_classification,text,Confidentiality category
 application_inventory,hosting_model,text,Azure AWS or OnPrem
 application_inventory,customer_facing,text,Yes or No
 application_inventory,dr_tier,text,Disaster recovery tier
+
+audit_issues_remediation_status,issue_id,text,Unique audit issue identifier
+audit_issues_remediation_status,issue_title,text,Audit issue title
+audit_issues_remediation_status,rating,text,Issue severity rating
+audit_issues_remediation_status,issue_owner,text,Management owner accountable for remediation
+audit_issues_remediation_status,target_remediation_date,date,Target date for remediation completion
+audit_issues_remediation_status,current_status,text,Current remediation progress status
+audit_issues_remediation_status,validation_status,text,Closure validation status
+audit_issues_remediation_status,validation_date,date,Date issue closure was validated
+audit_issues_remediation_status,evidence_reference,text,Reference to supporting evidence or request item
+audit_issues_remediation_status,comments,text,Additional remediation notes
